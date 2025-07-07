@@ -66,6 +66,15 @@ textarea::placeholder {
   color: var(--text-muted);
 }
 
+.card input {
+  border: 1px solid var(--border);
+}
+
+.card input:focus {
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
 
 :root {
   --primary: #0077B6;
