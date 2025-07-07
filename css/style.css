@@ -48,7 +48,7 @@ a:hover {
 }
 
 /* Navbar */
-.navbar {
+.navbar, .custom-navbar {
   background-color: var(--primary);
 }
 
@@ -67,7 +67,7 @@ a:hover {
 .btn-primary:hover {
   background-color: var(--primary-hover);
   border-color: var(--primary-hover);
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 /* Cards and Forms */
@@ -119,6 +119,16 @@ textarea::placeholder {
   border: none;
 }
 
+/* Badges */
+.badge.bg-success {
+  background-color: var(--accent) !important;
+}
+
+.badge.bg-secondary {
+  background-color: var(--secondary) !important;
+  color: var(--text-main);
+}
+
 /* Footer */
 footer,
 .custom-footer {
@@ -164,7 +174,7 @@ footer p,
   animation: fadeIn 1s ease-in forwards;
 }
 
-/* Utility Spacing (optional overrides) */
+/* Utility */
 .mt-auto {
   margin-top: auto !important;
 }
@@ -185,6 +195,9 @@ footer p,
   max-width: 450px;
   padding: 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 
 .booking-card .form-label {
