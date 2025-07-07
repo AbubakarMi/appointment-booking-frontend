@@ -16,27 +16,31 @@
     </div>
   </nav>
 
-  <!-- Login Form Section -->
-  <section class="d-flex align-items-center justify-content-center" style="min-height: 90vh;">
-    <div class="card p-4 shadow-sm animate-slide" style="width: 100%; max-width: 400px;">
-      <h3 class="mb-4 text-center animate-fade">Login</h3>
-      <form>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+  <!-- Login Section -->
+  <main class="d-flex align-items-center justify-content-center login-section">
+    <div class="card login-card shadow animate-slide">
+      <div class="card-body">
+        <h3 class="mb-4 text-center animate-fade" style="animation-delay: 0.3s;">👋 Welcome Back</h3>
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Enter your password" required />
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+        <div class="text-center mt-3">
+          <small>Don't have an account? <a href="signup.html">Sign up</a></small>
         </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" id="password" class="form-control" placeholder="Enter your password" required />
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Login</button>
-      </form>
-      <div class="text-center mt-3">
-        <small>Don't have an account? <a href="signup.html">Sign up</a></small>
       </div>
     </div>
-  </section>
-   
+  </main>
+
   <!-- Footer -->
   <footer class="custom-footer text-center py-3">
     <p class="mb-0 text-white">© 2025 Devflux. All rights reserved.</p>

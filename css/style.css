@@ -75,6 +75,13 @@ a:hover {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .card-title {
@@ -174,14 +181,35 @@ footer p,
   animation: fadeIn 1s ease-in forwards;
 }
 
+/* Typing Animation */
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--primary-hover);
+  font-weight: bold;
+  width: 0;
+  animation: typing 2s steps(30, end) forwards, blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--primary-hover); }
+}
+
 /* Utility */
 .mt-auto {
   margin-top: auto !important;
 }
 
-/* ========================= */
-/* ADDITIONS for book.html   */
-/* ========================= */
+/* ============================ */
+/* Book Page / Booking Section */
+/* ============================ */
 .booking-section {
   min-height: 90vh;
   display: flex;
@@ -198,6 +226,11 @@ footer p,
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-4px);
 }
 
 .booking-card .form-label {
@@ -214,4 +247,63 @@ footer p,
   color: var(--primary);
   margin-bottom: 1.5rem;
   text-align: center;
+}
+
+/* =========================== */
+/* Login / Signup Shared Card */
+/* =========================== */
+.login-section {
+  min-height: 100vh;
+  background: linear-gradient(to right, #caf0f8, #edf6f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+.login-card .form-label {
+  font-weight: 600;
+  color: var(--primary-hover);
+}
+
+.login-card .form-control {
+  font-size: 0.95rem;
+}
+
+/* =========================== */
+/* Homepage Hero Section      */
+/* =========================== */
+.hero-section {
+  background: linear-gradient(135deg, #e0f7ff 0%, #ffffff 100%);
+  padding: 5rem 1rem;
+}
+
+.hero-section h1 {
+  color: var(--primary-hover);
+}
+
+.hero-section p {
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .booking-card, .login-card {
+    padding: 1.5rem;
+  }
 }
