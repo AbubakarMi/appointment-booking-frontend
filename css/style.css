@@ -10,7 +10,7 @@
   --text-muted: #6B6B6B;
 }
 
-/* Layout */
+/* Global Layout */
 html, body {
   height: 100%;
   margin: 0;
@@ -40,6 +40,7 @@ p {
 
 a {
   color: var(--primary);
+  text-decoration: none;
 }
 
 a:hover {
@@ -47,12 +48,11 @@ a:hover {
 }
 
 /* Navbar */
-.navbar {
+.navbar, .custom-navbar {
   background-color: var(--primary);
 }
 
-.navbar-brand,
-.nav-link {
+.navbar-brand, .nav-link {
   color: white !important;
 }
 
@@ -87,20 +87,36 @@ a:hover {
 
 /* Input Fields */
 .card input,
-input {
+.card textarea,
+input,
+textarea,
+select {
   border: 1px solid var(--border);
+  background-color: #fff;
+  color: var(--text-main);
 }
 
+input:focus,
+textarea:focus,
+select:focus,
 .card input:focus,
-input:focus {
+.card textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2);
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
+  outline: none;
 }
 
 input::placeholder,
 textarea::placeholder {
   color: var(--text-muted);
+}
+
+/* Alerts */
+.alert-success {
+  background-color: var(--accent);
+  color: white;
+  border: none;
 }
 
 /* Badges */
@@ -117,6 +133,15 @@ textarea::placeholder {
 footer,
 .custom-footer {
   background-color: var(--primary);
+  color: white;
+  margin-top: auto;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+footer p,
+.custom-footer p {
+  margin: 0;
   color: white;
 }
 
@@ -147,4 +172,46 @@ footer,
 
 .animate-fade {
   animation: fadeIn 1s ease-in forwards;
+}
+
+/* Utility */
+.mt-auto {
+  margin-top: auto !important;
+}
+
+/* ========================= */
+/* ADDITIONS for book.html   */
+/* ========================= */
+.booking-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.booking-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.booking-card .form-label {
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.booking-card .form-select,
+.booking-card .form-control {
+  font-size: 1rem;
+}
+
+.booking-card h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
