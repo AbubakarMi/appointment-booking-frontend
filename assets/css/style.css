@@ -8,6 +8,9 @@
   --border: #DADADA;
   --text-main: #2D2D2D;
   --text-muted: #6B6B6B;
+  --warning: #ffc107;
+  --error: #e63946;
+  --bg: #f8f9fa;
 }
 
 /* Global Layout */
@@ -105,9 +108,7 @@ select {
 
 input:focus,
 textarea:focus,
-select:focus,
-.card input:focus,
-.card textarea:focus {
+select:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2);
   transition: 0.3s ease-in-out;
@@ -152,25 +153,20 @@ footer p,
   color: white;
 }
 
+/* Utility */
+.mt-auto {
+  margin-top: auto !important;
+}
+
 /* Animations */
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .animate-slide {
@@ -181,7 +177,7 @@ footer p,
   animation: fadeIn 1s ease-in forwards;
 }
 
-/* Typing Animation */
+/* Typing Text Animation */
 .typing-text {
   display: inline-block;
   white-space: nowrap;
@@ -202,14 +198,45 @@ footer p,
   50% { border-color: var(--primary-hover); }
 }
 
-/* Utility */
-.mt-auto {
-  margin-top: auto !important;
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #e0f7ff 0%, #ffffff 100%);
+  padding: 5rem 1rem;
 }
 
-/* ============================ */
-/* Book Page / Booking Section */
-/* ============================ */
+.hero-section h1 {
+  color: var(--primary-hover);
+}
+
+.hero-section p {
+  color: var(--text-muted);
+}
+
+.hero-title span {
+  display: none;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  animation: fadeInScale 1s ease forwards;
+}
+
+@keyframes fadeInScale {
+  0% {opacity: 0; transform: scale(0.8);}
+  100% {opacity: 1; transform: scale(1);}
+}
+
+/* Fade-slide for scrolling */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .booking-section {
   min-height: 90vh;
   display: flex;
@@ -249,9 +276,7 @@ footer p,
   text-align: center;
 }
 
-/* =========================== */
-/* Login / Signup Shared Card */
-/* =========================== */
+
 .login-section {
   min-height: 100vh;
   background: linear-gradient(to right, #caf0f8, #edf6f9);
@@ -285,23 +310,36 @@ footer p,
   font-size: 0.95rem;
 }
 
-/* =========================== */
-/* Homepage Hero Section      */
-/* =========================== */
-.hero-section {
-  background: linear-gradient(135deg, #e0f7ff 0%, #ffffff 100%);
-  padding: 5rem 1rem;
+
+.appointment-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-.hero-section h1 {
-  color: var(--primary-hover);
+.appointment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
 }
 
-.hero-section p {
-  color: var(--text-muted);
+
+.service-card {
+  background-color: var(--surface);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-/* Responsive */
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
 @media (max-width: 576px) {
   .booking-card, .login-card {
     padding: 1.5rem;
