@@ -1,0 +1,80 @@
+body {
+  background-color: var(--background);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+}
+
+p {
+  color: var(--text-main);
+}
+
+a {
+  color: var(--primary);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary);
+}
+
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* Card / Form Styling */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.card-title {
+  color: var(--primary);
+}
+
+.card-text {
+  color: var(--text-muted);
+}
+
+footer {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Input fields */
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+
+:root {
+  --primary: #0077B6;
+  --primary-hover: #023E8A;
+  --secondary: #90E0EF;
+  --accent: #00C897;
+  --background: #FFFFFF;
+  --surface: #F7F7F7;
+  --border: #DADADA;
+  --text-main: #2D2D2D;
+  --text-muted: #6B6B6B;
+}
