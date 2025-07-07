@@ -75,6 +75,11 @@ textarea::placeholder {
   box-shadow: none;
 }
 
+input:focus {
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
 
 :root {
   --primary: #0077B6;
